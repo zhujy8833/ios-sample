@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var myText: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonClicked(sender: UIButton) {
+        var text = sender.titleForState(.Normal)
+        myText.text = text;
+    }
 
 }
 
