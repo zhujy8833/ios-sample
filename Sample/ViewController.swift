@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var myText: UILabel!
 
+    @IBOutlet weak var slideValueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,9 +22,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonClicked(sender: UIButton) {
-        var text = sender.titleForState(.Normal)
-        myText.text = text;
+    @IBAction func onSlide(sender: UISlider) {
+        var sliderValue = lroundf(sender.value);
+        slideValueLabel.text = "\(sliderValue)";
     }
 
 }
